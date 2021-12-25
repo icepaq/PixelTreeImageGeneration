@@ -2,6 +2,7 @@ from PIL import Image
 from stumprandom import Stumprandom
 from RandomColor import RandomColor
 from RandomFruits import RandomFruits
+import random
 
 THRESHOLD = 5
 
@@ -17,21 +18,24 @@ def sameColor(pixel, color):
         return True
 
 def main():
-    im = Image.open("./assets/tree lol.png")
 
-    stump = Stumprandom()
-    randomColor = RandomColor()
-    randomFruits = RandomFruits()
+    trees = ['big leaves.png', 'tall tree.png', 'tree lol.png', 'tree with clouds.png']
 
+    for i in range(20):
+        tree = trees[random.randint(0, len(trees) - 1)]
+        im = Image.open('./assets/' + tree)
 
-    im = stump.width(im)
-    im = randomFruits.fruit(im)
-    im = randomColor.stumpColor(im)
-    im = randomColor.leavesColor(im)
+        stump = Stumprandom()
+        randomColor = RandomColor()
+        randomFruits = RandomFruits()
 
-    im = im.resize((500, 500), Image.NEAREST)
-    
+        im = stump.width(im)
+        im = randomFruits.fruit(im)
+        im = randomColor.stumpColor(im)
+        im = randomColor.leavesColor(im)
 
-    im.save("tree lol 2.png")
+        im = im.resize((500, 500), Image.NEAREST)        
+
+        im.save("./output/" + str(i) + ".png")
 
 main()
