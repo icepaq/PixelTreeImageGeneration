@@ -1,2 +1,2 @@
-output/*
+output/*.png
 __pycache__
