@@ -29,6 +29,7 @@ def main():
     im = randomColor.stumpColor(im)
     im = randomColor.leavesColor(im)
 
+    im = im.resize((500, 500), Image.NEAREST)
     
 
     im.save("tree lol 2.png")
