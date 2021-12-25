@@ -33,6 +33,4 @@ def main():
 
     im.save("tree lol 2.png")
 
-
-if __name__ == "__main__":
-    main()
+main()

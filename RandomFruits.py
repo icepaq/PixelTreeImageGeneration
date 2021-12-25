@@ -6,7 +6,7 @@ class RandomFruits:
         pass
 
 
-    def sameColor(same, pixel, color) -> bool:
+    def sameColor(self, pixel, color) -> bool:
         if pixel[0] == color[0] and pixel[1] == color[1] and pixel[2] == color[2]:
             return True
 
